@@ -11,5 +11,26 @@
       <p><em>Want your product to be listed at Amazon? Fill out this form.</em></p>
       <p><em>We will verify the authenticity of your product and get back to you as soon as possible.</em></p>
     </header>
+
+    <form action='' method='post' class='product-form'>
+        <div class='form-row'>
+            <label for='full-name'>Title<span class="asterisk"> *</span></label>
+            <input id='full-name' name='full-name' type='text' required/>
+        </div>
+
+        <div class='form-row'>
+            <label for='price'>Price (in ₹)<span class="asterisk"> *</span></label>
+            <input id='price' name='price' type='number' required/>
+        </div>
+
+        <div class='form-row'>
+            <label for='abstract'>Description<span class="asterisk"> *</span></label>
+            <textarea id='abstract' name='abstract' placeholder="Describe your product in 500 words or less" required></textarea>
+        </div>
+
+        <div class='form-row'>
+            <button>Submit</button>
+        </div>
+    </form>
   </body>
 </html>
