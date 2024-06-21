@@ -59,6 +59,7 @@ body {
 }
 
 .form-row input[type='text'],
+.form-row input[type='file'],
 .form-row input[type='number'] {
     background-color: #FFFFFF;
     border: 1px solid #D6D9DC;
@@ -66,6 +67,11 @@ body {
     width: 100%;
     padding: 7px;
     font-size: 14px;
+}
+
+.form-row input[type='file'] {
+    background-color: #F6F7F8;
+    border: none;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -156,7 +162,11 @@ input[type="number"] {
     background-color: #407FC7;
 }
 
-@media only screen and (min-width: 700px) {
+.upload {
+    align-items: center;
+}
+
+@media only screen and (min-width: 1300px) {
     .speaker-form-header,
     .speaker-form {
       width: 600px;
@@ -170,6 +180,7 @@ input[type="number"] {
 
     .form-row input[type='text'],
     .form-row input[type='number'],
+    .form-row input[type='file'],
     .form-row select {
         width: max(150px, 30%);
         height: initial;
@@ -177,13 +188,13 @@ input[type="number"] {
     
     
     .form-row textarea {
-      width: 50%;
+      width: max(750px, 50%);
       height: initial;
     }
 
     .form-row label {
       text-align: right;
-      width: 120px;
+      width: 150px;
       margin-top: 7px;
       padding-right: 20px;
     }
@@ -193,6 +204,6 @@ input[type="number"] {
     }
 
     .form-row button {
-        margin-left: 120px;
+        margin-left: 150px;
     }
 }
