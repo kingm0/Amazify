@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon: List your Products</title>
-    <link rel="stylesheet" href="./admin-styles.css">
-</head>
-<body>
-    
-</body>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Amazon: List Your Products</title>
+    <link rel='stylesheet' href='admin-styles.css'/>
+  </head>
+  <body>
+    <header class='header'>
+      <h1>Welcome To Amazon!</h1>
+      <p><em>Check out the status of your product listings here.</em></p>
+    </header>
+
+    <section class="products">
+        <div class="card">
+            <div class="image-placeholder">
+                <img src="https://via.placeholder.com/150" alt="Image Placeholder" width="150" height="150">
+            </div>
+            <div class="information">
+                <h2 class="product-title">Apple iPhone 15 (128 GB) - Black</h2>
+                <p class="product-price">₹ 71,999</p>
+                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, corporis autem! Exercitationem magnam obcaecati, iusto architecto, veritatis reiciendis suscipit sequi delectus, maxime vitae illo hic!</p>
+                <p class="product-status product-rejected">Rejected</p>
+            </div>
+            <img class="delete-button" src="./svg/delete-outline.svg" alt="Delete Button">
+        </div>
+
+        <div class="card">
+            <div class="image-placeholder">
+                <img src="https://via.placeholder.com/150" alt="Image Placeholder" width="150" height="150">
+            </div>
+            <div class="information">
+                <h2 class="product-title">Apple iPhone 15 (128 GB) - Black</h2>
+                <p class="product-price">₹ 71,999</p>
+                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, corporis autem! Exercitationem magnam obcaecati, iusto architecto, veritatis reiciendis suscipit sequi delectus, maxime vitae illo hic!</p>
+                <p class="product-status product-verified">Verified</p>
+            </div>
+            <img class="delete-button" src="./svg/delete-outline.svg" alt="Delete Button">
+        </div>
+
+        <div class="card">
+            <div class="image-placeholder">
+                <img src="https://via.placeholder.com/150" alt="Image Placeholder" width="150" height="150">
+            </div>
+            <div class="information">
+                <h2 class="product-title">Apple iPhone 15 (128 GB) - Black</h2>
+                <p class="product-price">₹ 71,999</p>
+                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, corporis autem! Exercitationem magnam obcaecati, iusto architecto, veritatis reiciendis suscipit sequi delectus, maxime vitae illo hic!</p>
+                <p class="product-status product-pending">Pending</p>
+            </div>
+            <img class="delete-button" src="./svg/delete-outline.svg" alt="Delete Button">
+        </div>
+    </section>
+
+    <script src="./admin-main.js"></script>
+  </body>
 </html>
