@@ -51,6 +51,10 @@ The platform asks sellers to upload a text description and multiple images of th
 
 ### Accuracy Data
 ![Accuracy Data](./images/accuracy-data.png)
+![Image Dataset](./images/image-dataset.jpeg)
+![Validation Set](./images/validation-set.jpeg)
+![Dataset Split](./images/dataset-split.jpeg)
+![Charts](./images/charts.jpeg)
 
 ---
 
