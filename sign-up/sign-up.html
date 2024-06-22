@@ -31,10 +31,11 @@
           <input id='password' name='password' type='password' required />
         </div>
 
-        <div class='form-row'>
+        <div class='form-row confirm-password-row'>
             <label for='confirm-password'>Confirm Password<span class="required"> *</span></label>
             <input id='confirm-password' name='confirm-password' type='password' required />
-          </div>
+            <div class="error-message">Passwords do not match!</div>
+        </div>
 
         <div class="sign-up-prompt">Already have an account? <a href="../login/login.html" class="sign-up">Log In</a></div>
 
@@ -43,5 +44,7 @@
         </div>
       </form>
     </div>
+
+    <script src="sign-up-main.js"></script>
   </body>
 </html>

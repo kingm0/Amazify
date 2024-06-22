@@ -78,6 +78,21 @@ nav {
     padding: 7px;
     font-size: 15px;
 }
+
+.confirm-password-row {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.error-message {
+    position: absolute;
+    top: 65px;
+
+    color: red;
+    font-size: 12px;
+
+    display: none;
+}
   
 .sign-up {
     color: #0766ff;
