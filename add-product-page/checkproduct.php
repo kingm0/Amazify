@@ -3,7 +3,11 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+<<<<<<< HEAD
 require_once "/opt/lampp/htdocs/Amazify/config.php";
+=======
+require_once "../config.php";
+>>>>>>> 9d47b56 (changed file location)
 session_start();
 
 // Function to make a prediction using Roboflow API

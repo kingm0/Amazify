@@ -1,5 +1,6 @@
 <?php
 session_start();
+<<<<<<< HEAD
 require_once "/opt/lampp/htdocs/Amazify/config.php"; // Adjust path as per your file structure
 
 // Check if user is logged in
@@ -12,6 +13,20 @@ if (!isset($_SESSION['loggedin'])) {
 $sql = "SELECT id, title, price, description, images, status, created_at FROM products WHERE user = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $_SESSION['email']); // Assuming 'email' is used to identify user
+=======
+require_once "../config.php"; // Adjust path as per your file structure
+
+// Check if user is logged in
+if (!isset($_SESSION['loggedin'])) {
+    header("Location: ../index.html"); // Redirect if not logged in
+    exit;
+}
+
+// Fetch products from the database
+$sql = "SELECT id, title, price, description, images, status, created_at FROM products WHERE user = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $_SESSION['email']); // Assuming 'email' is used to identify the user
+>>>>>>> 9d47b56 (changed file location)
 $stmt->execute();
 $result = $stmt->get_result();
 $products = $result->fetch_all(MYSQLI_ASSOC);
@@ -31,7 +46,11 @@ $stmt->close();
             <div class="pfp-placeholder">
                 <img src="#" alt="Profile Picture">
             </div>
+<<<<<<< HEAD
             <div class="full-name"><?php echo $_SESSION['email']; ?>;</div>
+=======
+            <div class="full-name"><?php echo $_SESSION['email']; ?></div>
+>>>>>>> 9d47b56 (changed file location)
         </div>
         <div class="right-links">
             <button class="list-product-button"><a href="../add-product-page/add-product.html">List Product</a></button>
@@ -46,7 +65,11 @@ $stmt->close();
 
     <section class="products">
         <?php foreach ($products as $product): ?>
+<<<<<<< HEAD
             <div class="card">
+=======
+            <div class="card" data-id="<?php echo $product['id']; ?>">
+>>>>>>> 9d47b56 (changed file location)
                 <div class="image-placeholder">
                     <img src="<?php echo $product['images']; ?>" alt="Product Image" width="150" height="150">
                 </div>
