@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const productsSection = document.querySelector('.products');
 
-function createProductCard(title, price, description, imageData) {
+function createProductCard(title, price, description, imageData, status) {
     const card = document.createElement('div');
     card.classList.add('card');
 
@@ -38,8 +38,8 @@ function createProductCard(title, price, description, imageData) {
     productDescription.textContent = description;
 
     const productStatus = document.createElement('p');
-    productStatus.classList.add('product-status', 'product-rejected');
-    productStatus.textContent = "Rejected";
+    productStatus.classList.add('product-status', `product-${status.toLowerCase()}`);
+    productStatus.textContent = status;
 
     information.appendChild(productTitle);
     information.appendChild(productPrice);
@@ -62,9 +62,11 @@ function createProductCard(title, price, description, imageData) {
     productsSection.appendChild(card); 
 }
 
+// Example usage:
 createProductCard(
     'Samsung Galaxy S21 (128 GB) - Black', 
     '56,999', 
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, corporis autem! Exercitationem magnam obcaecati, iusto architecto, veritatis reiciendis suscipit sequi delectus, maxime vitae illo hic!',
-    'https://via.placeholder.com/150'
+    'https://via.placeholder.com/150',
+    'Verified' // Status can be 'Verified', 'Pending', etc.
 );
