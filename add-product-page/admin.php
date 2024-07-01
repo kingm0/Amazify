@@ -92,7 +92,7 @@ height: 50px;
     <nav>
         <div class="left-links">
             <div class="pfp-placeholder">
-                <img src="#" alt="Profile Picture">
+                <img src="./svg/pfp.svg" alt="Profile Picture">
             </div>
             <div class="full-name"><?php echo $_SESSION['email']; ?></div>
         </div>
@@ -124,9 +124,9 @@ height: 50px;
                 </div>
                 <div class="button-container">
                     <?php if (strtolower($product['status']) == 'rejected'): ?>
-                        <button class="appeal-button" onclick="appealProduct(<?php echo $product['id']; ?>)">Appeal</button>
+                        <button class="appeal-button" style="background-color: #e74c3c" onclick="appealProduct(<?php echo $product['id']; ?>)">Appeal</button>
                     <?php endif; ?>
-                    <img class="delete-button btn2" src="./svg/pencil-box.svg" alt="Delete Button">
+                    <img class="delete-button btn2" src="./svg/pencil.svg" alt="Delete Button">
                 </div>
             </div>
         <?php endforeach; ?>
