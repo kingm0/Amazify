@@ -3,11 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-<<<<<<< HEAD
-require_once "/opt/lampp/htdocs/Amazify/config.php";
-=======
 require_once "../config.php";
->>>>>>> 9d47b56 (changed file location)
 session_start();
 
 // Function to make a prediction using Roboflow API
@@ -125,10 +121,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Calculate the average confidence
                 $totalConfidence = 0;
                 $numPredictions = count($result['predictions']);
+                $containsFakeClass = false;
+
                 foreach ($result['predictions'] as $prediction) {
                     $totalConfidence += $prediction['confidence'];
+                    if (strpos(strtolower($prediction['class']), 'fake') !== false) {
+                        $containsFakeClass = true;
+                    }
                 }
                 $averageConfidence = $totalConfidence / $numPredictions;
+
+                // Adjust average confidence if fake class is detected
+                if ($containsFakeClass) {
+                    $averageConfidence *= -1;
+                }
 
                 // Determine status based on average confidence
                 $status = $averageConfidence > 0.75 ? 'Verified' : 'Rejected';
@@ -145,7 +151,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->execute();
                 $stmt->close();
                 
-                
                 // Redirect to admin page
                 header("Location: admin.php");
                 exit();
@@ -155,8 +160,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "No predictions found.";
             }
         } else {
-            echo "Failed to upload image.";}
+            echo "Failed to upload image.";
+        }
     } else {
         echo "Please upload an image.";
     }
 }
+?>

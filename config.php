@@ -8,4 +8,4 @@ $execute=mysqli_query($conn,$query);
 if (!$execute) {
     die("Error: Cannot select database. " . mysqli_error($conn));
 }
-else echo "yes";
+

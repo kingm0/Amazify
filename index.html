@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
+<head>
     <meta charset='UTF-8'/>
     <title>Welcome To Amazify!</title>
     <link rel='stylesheet' href='./login-styles.css'/>
-  </head>
-  <body>
+</head>
+<body>
     <nav>
       Amazify
     </nav>
@@ -14,11 +14,7 @@
       <form action='login.php' method='post' class='login-form'>
         <div class='form-row'>
           <label for='email'>Email<span class="required"> *</span></label>
-          <input id='email'
-                 name='email'
-                 type='email'
-                 placeholder='example@example.com'
-                 required />
+          <input id='email' name='email' type='email' placeholder='example@example.com' required />
         </div>
 
         <div class='form-row'>
@@ -29,9 +25,14 @@
         <div class="sign-up-prompt">Don't have an account? <a href="sign-up/sign-up.html" class="sign-up">Sign Up</a></div>
 
         <div class='form-row button'>
-          <button>Submit</button>
+          <button type="submit">Submit</button>
         </div>
+
+        <!-- Error message display area -->
+        <?php if (isset($_GET['error'])): ?>
+          <p style='color:red;'><?php echo htmlspecialchars($_GET['error']); ?></p>
+        <?php endif; ?>
       </form>
     </div>
-  </body>
+</body>
 </html>
